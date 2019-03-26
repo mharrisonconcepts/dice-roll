@@ -4,18 +4,25 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 long randNumber;
 
 void setup() {
-  lcd.begin(16, 2);
-  randomSeed(analogRead(0));
+  lcd.begin(16, 2); //initializes the lcd as output
+  randomSeed(analogRead(0)); //
   Serial.setTimeout(10);
-  lcd.setCursor(0, 0);
-  lcd.print("");
-  randNumber = random(1, 7);
-  lcd.println(randNumber);
+  randNumber = random(1, 7); //sets the range or number of sides on the die
+  pinMode(7, INPUT); //one die
+  pinMode(8, INPUT); //two dice
+  lcd.println("Select # of dice to roll");
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+{ if (digitalRead(7) == HIGH) {
+      lcd.setCursor(0, 0);
+      lcd.print("");
+      lcd.println(randNumber);
+
+    }
+  }
 
 
 
