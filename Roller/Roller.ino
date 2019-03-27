@@ -20,66 +20,54 @@ void setup() {
   lcd.println("Select # of dice to roll");
 
 }
-void(* resetFunc) (void) = 0;
+void(* resetFunc) (void) = 0; //declares reset function
 void loop() {
   // put your main code here, to run repeatedly:
-  buttonState = digitalRead(buttonPin);
-  buttonState = digitalRead(button2);
-  buttonState = digitalRead(button3);
-  buttonState = digitalRead(button4);
-  randNumber1 = random(1,7);
-  randNumber2 = random(1,7);
-  randNumber3 = random(1,7);
-  randNumber4 = random(1,7);
+  buttonState = digitalRead(buttonPin); //initializes this pin for reading
+  buttonState = digitalRead(button2); //initializes this pin for reading
+  buttonState = digitalRead(button3); //initializes this pin for reading
+  buttonState = digitalRead(button4); //initializes this pin for reading
+  randNumber1 = random(1,7); //sets range for random number
+  randNumber2 = random(1,7); //sets range for random number
+  randNumber3 = random(1,7); //sets range for random number
+  randNumber4 = random(1,7); //sets range for random number
 
-{ if (digitalRead(buttonPin) == LOW) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("");
-      lcd.println(randNumber1);
+{ if (digitalRead(buttonPin) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
+      lcd.clear(); //clears characters that were on the lcd from setup
+      lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
+      lcd.println(randNumber1); //
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
-      delay(10000);
-      resetFunc();
     }
   }
-{ if (digitalRead(button2) == LOW) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("");
+{ if (digitalRead(button2) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
+      lcd.clear(); //clears characters that were on the lcd from setup
+      lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
       lcd.println(randNumber1);
       lcd.println(randNumber2);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
-      delay(10000);
-      resetFunc();
     }
   }
-  { if (digitalRead(button3) == LOW) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("");
+  { if (digitalRead(button3) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
+      lcd.clear(); //clears characters that were on the lcd from setup
+      lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
       lcd.println(randNumber1);
       lcd.println(randNumber2);
       lcd.println(randNumber3);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
-      delay(10000);
-      resetFunc();
     }
   }
-  { if (digitalRead(button4) == LOW) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("");
+  { if (digitalRead(button4) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
+      lcd.clear(); //clears characters that were on the lcd from setup
+      lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
       lcd.println(randNumber1);
       lcd.println(randNumber2);
       lcd.println(randNumber3);
       lcd.println(randNumber4);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
-      delay(10000);
-      resetFunc();
     }
   }
 }
