@@ -14,15 +14,13 @@ boolean okToPrint = true;
 
 void setup() {
   lcd.begin(16, 2); //initializes the lcd as output
-  randomSeed(analogRead(0)); //
-  Serial.setTimeout(10);
+  randomSeed(analogRead(0)); //sets where the Arduino will generate the random number
+  Serial.setTimeout(10); //refreshes serial buffer every 10 milliseconds
   randomSeed(analogRead(5)); //sets the range or number of sides on the die
-  pinMode(buttonPin, INPUT); //one die
-  pinMode(8, INPUT); //two dice
-  lcd.println("Select # of dice <<end1 to roll");
+  lcd.println("Select # of dice to roll");
 
 }
-
+void(* resetFunc) (void) = 0;
 void loop() {
   // put your main code here, to run repeatedly:
   buttonState = digitalRead(buttonPin);
@@ -41,6 +39,8 @@ void loop() {
       lcd.println(randNumber1);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
+      delay(10000);
+      resetFunc();
     }
   }
 { if (digitalRead(button2) == LOW) {
@@ -51,6 +51,8 @@ void loop() {
       lcd.println(randNumber2);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
+      delay(10000);
+      resetFunc();
     }
   }
   { if (digitalRead(button3) == LOW) {
@@ -62,6 +64,8 @@ void loop() {
       lcd.println(randNumber3);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
+      delay(10000);
+      resetFunc();
     }
   }
   { if (digitalRead(button4) == LOW) {
@@ -74,6 +78,8 @@ void loop() {
       lcd.println(randNumber4);
       lcd.setCursor(1, 1);
       lcd.println("Roll Again?");
+      delay(10000);
+      resetFunc();
     }
   }
 }
