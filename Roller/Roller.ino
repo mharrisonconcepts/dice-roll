@@ -5,10 +5,12 @@ long randNumber1; //declares that "randNumber1" stores 32 bits
 long randNumber2; //declares that "randNumber2" stores 32 bits
 long randNumber3; //declares that "randNumber3" stores 32 bits
 long randNumber4; //declares that "randNumber4" stores 32 bits
-const int buttonPin = A0; //names pin A0 "button4" for the program
-const int button2 = A1; //names pin A1 "button4" for the program
-const int button3 = A2; //names pin A2 "button4" for the program
+long randNumber5; //declares that "randNumber5" stores 32 bits
+const int buttonPin = A0; //names pin A0 "button1" for the program
+const int button2 = A1; //names pin A1 "button2" for the program
+const int button3 = A2; //names pin A2 "button3" for the program
 const int button4 = A3; //names pin A3 "button4" for the program
+const int button5 = A4; //names pin A4 "button5" for the program
 int buttonState = 0; //declares button state as 0
 
 void setup() { //code here runs once
@@ -25,10 +27,12 @@ void loop() { // put your main code here, to run repeatedly:
   buttonState = digitalRead(button2); //initializes this pin for reading
   buttonState = digitalRead(button3); //initializes this pin for reading
   buttonState = digitalRead(button4); //initializes this pin for reading
+  buttonState = digitalRead(button5); //initializes this pin for reading
   randNumber1 = random(1, 7); //sets range for random number 1
   randNumber2 = random(1, 7); //sets range for random number 2
   randNumber3 = random(1, 7); //sets range for random number 3
   randNumber4 = random(1, 7); //sets range for random number 4
+  randNumber5 = random(1, 7); //sets range for random number 4
 
 { if (digitalRead(buttonPin) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
       lcd.clear(); //clears characters that were on the lcd from setup
@@ -53,7 +57,7 @@ void loop() { // put your main code here, to run repeatedly:
       lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
       lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
       lcd.print(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
-      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column                                                                                                                              
       lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
   }
@@ -64,6 +68,18 @@ void loop() { // put your main code here, to run repeatedly:
       lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
       lcd.print(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
       lcd.print(randNumber4); //prints the "randomNumber4" declared at the beginning of loop
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
+    }
+  }
+  { if (digitalRead(button5) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
+      lcd.clear(); //clears characters that were on the lcd from setup
+      lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
+      lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
+      lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
+      lcd.print(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
+      lcd.print(randNumber4); //prints the "randomNumber4" declared at the beginning of loop
+      lcd.print(randNumber5); //prints the "randomNumber4" declared at the beginning of loop
       lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
       lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
