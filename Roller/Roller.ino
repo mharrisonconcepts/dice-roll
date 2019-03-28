@@ -33,39 +33,39 @@ void loop() { // put your main code here, to run repeatedly:
 { if (digitalRead(buttonPin) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
       lcd.clear(); //clears characters that were on the lcd from setup
       lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
-      lcd.println(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
-      lcd.setCursor(1, 1); //moves the lcd cursor to the second row of the first column
-      lcd.println("Roll Again?"); //prints "Roll again?" on the lcd
+      lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
   }
 { if (digitalRead(button2) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
       lcd.clear(); //clears characters that were on the lcd from setup
       lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
-      lcd.println(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
-      lcd.println(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
-      lcd.setCursor(1, 1); //moves the lcd cursor to the second row of the first column
-      lcd.println("Roll Again?"); //prints "Roll again?" on the lcd
+      lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
+      lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
   }
 { if (digitalRead(button3) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
       lcd.clear(); //clears characters that were on the lcd from setup
       lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
-      lcd.println(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
-      lcd.println(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
-      lcd.println(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
-      lcd.setCursor(1, 1); //moves the lcd cursor to the second row of the first column
-      lcd.println("Roll Again?"); //prints "Roll again?" on the lcd
+      lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
+      lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
+      lcd.print(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
   }
 { if (digitalRead(button4) == LOW) { //tells Arduino "if input from buttonPin is low, run this code"
       lcd.clear(); //clears characters that were on the lcd from setup
       lcd.setCursor(0, 0); //moves the lcd cursor to the first row of the first column
-      lcd.println(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
-      lcd.println(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
-      lcd.println(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
-      lcd.println(randNumber4); //prints the "randomNumber4" declared at the beginning of loop
-      lcd.setCursor(1, 1); //moves the lcd cursor to the second row of the first column
-      lcd.println("Roll Again?"); //prints "Roll again?" on the lcd
+      lcd.print(randNumber1); //prints the "randomNumber1" declared at the beginning of loop
+      lcd.print(randNumber2); //prints the "randomNumber2" declared at the beginning of loop
+      lcd.print(randNumber3); //prints the "randomNumber3" declared at the beginning of loop
+      lcd.print(randNumber4); //prints the "randomNumber4" declared at the beginning of loop
+      lcd.setCursor(0, 1); //moves the lcd cursor to the second row of the first column
+      lcd.print("Roll Again?"); //prints "Roll again?" on the lcd
     }
   }
 }
